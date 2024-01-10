@@ -32,14 +32,31 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 }
 
-function gradeQuiz(candidateAnswers) {
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
+// function gradeQuiz(candidateAnswers) {
+//   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
 
-  let grade; //TODO 3.2 use this variable to calculate the candidates score.
+//   let grade=0; //TODO 3.2 use this variable to calculate the candidates score.
+// candidateAnswers. forEach((answer,index)=>{ if (answer.toLowerCase()==correctAnswers[index].toLocaleLowerCase())
+//   {
+// grade++;
+
+// });
+//   return grade;
+// }
+function gradeQuiz(candidateAnswers, correctAnswers) {
+  let grade = 0;
+
+  candidateAnswers.forEach((answer, index) => {
+    if (answer.toLowerCase() === correctAnswers[index].toLowerCase()) {
+      //console.log(Question ${index + 1}: Correct);
+      grade++;
+    } else {
+      //console.log(Question ${index + 1}: Incorrect);
+    }
+  });
 
   return grade;
 }
-
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
