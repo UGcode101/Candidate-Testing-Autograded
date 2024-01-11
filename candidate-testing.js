@@ -22,15 +22,16 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //}
-  let candidateName = input.question("Candidate Name: ");
+  candidateName = input.question("Candidate Name: ");
 }
 function askQuestion() {
-  questions.forEach((question) => {
-    answer = input.question(question);
-    candidateAnswers.push(answer);
-  });
-  // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+  for (let i = 0; i < questions.length; i++) {
+    let answer = input.question(questions[i]);
+    candidateAnswers[i] = answer;
+  }
 }
+console.log(candidateAnswers.length);
+// TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
 // function gradeQuiz(candidateAnswers) {
 //   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
@@ -43,29 +44,26 @@ function askQuestion() {
 // });
 //   return grade;
 // }
-function gradeQuiz(candidateAnswers, correctAnswers) {
+function gradeQuiz(candidateAnswers) {
   let grade = 0;
-
-  candidateAnswers.forEach((answer, index) => {
-    if (answer.toLowerCase() === correctAnswers[index].toLowerCase()) {
-      //console.log(Question ${index + 1}: Correct);
+  for (let i = 0; i < correctAnswers.length; i++) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       grade++;
-    } else {
-      //console.log(Question ${index + 1}: Incorrect);
     }
-  });
-  grade = (grade / correctAnswers.length) * 100;
-
-  return grade;
+  }
+  let score = (grade / correctAnswers.length) * 100;
+  console.log(`Candidate Score: ${score}%`);
+  return score;
 }
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
   console.log("Hello " + candidateName);
   askQuestion();
-  gradeQuiz(candidateAnswers, correctAnswers);
+  grade = gradeQuiz(candidateAnswers, correctAnswers);
+  console.log(`Candidate's Grade: ${grade}%`);
 }
-
+runProgram();
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
