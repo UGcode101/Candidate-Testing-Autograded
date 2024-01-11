@@ -53,6 +53,10 @@ function gradeQuiz(candidateAnswers) {
   }
   let score = (grade / correctAnswers.length) * 100;
   console.log(`Candidate Score: ${score}%`);
+  if (score >= 80) [console.log("Congratulations you passed!")];
+  else {
+    console.log("Sorry you failed!");
+  }
   return score;
 }
 function runProgram() {
