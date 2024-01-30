@@ -30,7 +30,6 @@ function askQuestion() {
     candidateAnswers[i] = answer;
   }
 }
-console.log(candidateAnswers.length);
 // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
 // function gradeQuiz(candidateAnswers) {
@@ -67,7 +66,6 @@ function runProgram() {
   grade = gradeQuiz(candidateAnswers, correctAnswers);
   console.log(`Candidate's Grade: ${grade}%`);
 }
-runProgram();
 // ----------- Don't write any code or change any code below this line ----------   //
 module.exports = {
   candidateName: candidateName,
