@@ -1,6 +1,6 @@
 const input = require("readline-sync");
 
-// TODO 2: modify your quiz app to ask 5 questions //
+// TODO 2: modify your quiz app to ask 5 questions    //
 
 // TODO 1.1a: Define candidateName //
 let candidateName = "";
@@ -66,7 +66,7 @@ function runProgram() {
   grade = gradeQuiz(candidateAnswers, correctAnswers);
   console.log(`Candidate's Grade: ${grade}%`);
 }
-// ----------- Don't write any code or change any code below this line ----------   //
+// ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
   question: question,
